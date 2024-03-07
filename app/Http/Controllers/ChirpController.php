@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Chirp;
 use App\Models\User;
 use Illuminate\Http\Request;
+use PDF;
 
 class ChirpController extends Controller
 {
@@ -15,6 +16,8 @@ class ChirpController extends Controller
         return view('chirps.index',[
             'chirps' => Chirp::with('user')->latest()->get()
         ]);
+
+
     }
 
     /**
@@ -88,6 +91,16 @@ class ChirpController extends Controller
         $chirp->delete();
 
         return to_route('chirps.index')->with('status', __('Chirp Deleted, Successfully!!!'));
+
+    }
+
+    public function reportechirps(){
+
+        $chirps = Chirp::all();
+
+        $pdf = Pdf::loadView('vpdf.chirppdf', compact('chirps'));
+        $pdf->setPaper('a4', 'landscape');
+        return $pdf->stream('chirps.pdf');
 
     }
 }

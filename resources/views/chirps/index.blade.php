@@ -3,6 +3,7 @@
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Chirps') }}
         </h2>
+        <a href="{{ route('chirppdf.pdf') }}" class="absolute right-14 font-semibold text-xl text-gray-800 dark:text-gray-200">Exportar PDF</a>
     </x-slot>
 
     <div class="py-12">

@@ -5,13 +5,13 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Models\Chirp;
 use App\Models\User;
+use Barryvdh\DomPDF\Facade\Pdf;
 
 /*
 DB::listen(function ($query){
     dump($query->sql);
 });
 */
-
 
 Route::view('/', 'welcome')->name('welcome');
 
@@ -35,7 +35,8 @@ Route::middleware('auth')->group(function () {
     Route::put('/chirps/{chirp}', [ChirpController::class, 'update'])->name('chirps.update');
     Route::delete('/chirps/{chirp}', [ChirpController::class, 'destroy'])->name('chirps.destroy');
 
-
+    //pdf
+    Route::get('/reportechirps',[ChirpController::class, 'reportechirps'])->name('chirppdf.pdf');
 });
 
 require __DIR__.'/auth.php';
