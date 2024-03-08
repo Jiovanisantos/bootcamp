@@ -246,5 +246,11 @@
     "Chirp Updated, Successfully!!!": "¡Chirp actualizado exitosamente!",
     "edited": "Editado",
     "Chirp Deleted, Successfully!!!": "Chirp Eliminado Exitosamente",
-    "Delete Chirp": "Eliminar Chirp"
+    "Delete Chirp": "Eliminar Chirp",
+    "Whats is your product?": "¿Cual es tu producto?",
+    "Product": "Producto",
+    "Whats the price?": "¿Cual es el precio?",
+    "What is the amount?": "¿Cual es la cantidad?",
+    "Product Updated, Successfully!!!": "Producto actualizado, Correctamente!!!",
+    "Product Deleted, Successfully!!!": "Producto eleiminado, Correctamente!!!"
 }
